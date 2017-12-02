@@ -40,3 +40,12 @@
 ### Audio Streaming
 
 Per https://github.com/peers/peerjs#media-calls
+
+### Auto-Moderation
+
+- Graph mic levels over time per peer to show patterns
+- Leader-driven queueing mechanism, muted otherwise. Must "raise hand"
+
+#### Raising your hand
+
+- Any including leader may "raise a hand" to queue up to speak for X minutes. Should involve cool down.
