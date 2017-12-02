@@ -36,3 +36,7 @@
   - Upon other slave connection to leader, receive updated phone book
 - Phonebook connection resolution
   - Slaves are responsible for connecting to all peers. Upon reception of phone book, find all peers that connected before me and connect to THEM if not already connected. This ensures all peers are connected.
+
+### Audio Streaming
+
+Per https://github.com/peers/peerjs#media-calls
