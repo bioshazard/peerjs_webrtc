@@ -49,3 +49,7 @@ Per https://github.com/peers/peerjs#media-calls
 #### Raising your hand
 
 - Any including leader may "raise a hand" to queue up to speak for X minutes. Should involve cool down.
+
+#### Speech cool down
+
+- After 2 minutes of continuous, uninterrupted speech, you will get a 30 second warning before you have to queue back up to speak.
