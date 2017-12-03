@@ -3,14 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>WebRTC Chat</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.14/peer.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.9/vue.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/0.3.14/peer.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.9/vue.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
     <h1>AutoMod WebRTC Audio Chat</h1>
 
+
+
+
+
     <div id="vue-chat-app">
+      <h2>Join Chat</h2>
+      <input v-model="firstpeer" type="text" name="" value="" placholder="firstpeer">
+      <a href="#" @click.prevent="startPeer()">Connect to a starter peer</a>
+
       <h2>Active Peers</h2>
       <ul>
         <li>Me: {{id}}</li>
@@ -18,11 +27,24 @@
           {{peer}}
         </li>
       </ul>
-      <h2>Join Chat</h2>
-      <input v-model="firstpeer" type="text" name="" value="" placholder="firstpeer">
-      <a href="#" @click.prevent="startPeer()">Connect to a starter peer</a>
 
+      <h2>Video Player Element</h2>
+      <div id="video-elements">
+        <ul>
+          <li v-for="peer in peerNames">
+              {{peer}}<br>
+              <video v-bind:id="'viewPeer' + peer" style="border: 1px black solid" autoplay></video>
+          </li>
+        </ul>
+      </div>
+
+
+      <h2>My Mic Volume</h2>
+      <canvas width="320px" height="30px" id="test" style="background-color: black;"></canvas>
+      <h2>Volume Chart</h2>
+      <canvas id="myChart" width="400" height="200"></canvas>
     </div>
+
 
 
 
