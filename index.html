@@ -19,8 +19,10 @@
       <h2>Active Peers</h2>
       <ul>
         <li>Me: <a v-bind:href="'#'+id">{{id}}</a></li>
-        <li v-for="peer in peerNames">
-          {{peer}}
+        <li v-for="(item, key, index) in peers">
+          {{index}} - {{key}}
+
+          <video v-bind:id="'viewPeer-' + key" style="border: 1px black solid" autoplay></video>
         </li>
       </ul>
 
