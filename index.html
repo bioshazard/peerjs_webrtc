@@ -38,7 +38,8 @@
       </ol>
 
       <h2>Chat</h2>
-      <input type="text" name="" value="" @keyup.enter.native="sendMessage()">
+      <input type="text" v-model="msg">
+      <a href="#" @click.prevent="submitMsg()">Send</a>
       <ul>
         <li v-for="message in chatlog">
           {{message.user}}: {{message.body}}
