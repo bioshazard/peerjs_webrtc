@@ -22,7 +22,9 @@
         <li v-for="(item, key, index) in peers">
           {{index}} - {{key}}
 
-          <video v-bind:id="'viewPeer-' + key" style="border: 1px black solid" autoplay></video>
+          <div v-bind:id="'peerVideo-'+key">
+
+          </div>
         </li>
       </ul>
 
@@ -34,6 +36,14 @@
           {{peer}}
         </li>
       </ol>
+
+      <h2>Chat</h2>
+      <input type="text" name="" value="" @keyup.enter.native="sendMessage()">
+      <ul>
+        <li v-for="message in chatlog">
+          {{message.user}}: {{message.body}}
+        </li>
+      </ul>
 
       <h2>Video Player Element</h2>
       <div id="video-elements">
